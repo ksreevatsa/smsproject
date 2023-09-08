@@ -1,0 +1,33 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SMS PROJECT</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/adminstyle.css' %}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h2 align="center">Student Academic Managemnt System</h2>
+<br>
+<div style="background-color:lightgrey;padding:20px; font-size:15pt">
+<a href="{% url 'adminhome' %}">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{% url 'adminchangepwd' %}">change password</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{% url 'adminstudent' %}">Student</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{% url 'adminfaculty' %}">Faculty</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{% url 'admincourses' %}">Course</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{% url 'facultycoursemapping' %}">Faculty Course Mapping</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{% url 'adminlogout'%}">Logout</a>&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+<h3 align="right"style="color:Green">Welcome, {{adminuname}}</h3>
+<br><br>
+
+{% block 'body' %}
+
+<p>"I am in Admin home page"</p>
+
+{% endblock %}
+
+</body>
+</html>

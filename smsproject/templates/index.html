@@ -1,0 +1,45 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SMS PROJECT</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body >
+<h2 align="center">Student Academic Managemnt System</h2><br>
+
+   <nav class="navbar">
+       <div class="logo">SMS</div>
+   <ul class="nav-links">
+       <div class="menu">
+<li><a href="{% url 'home' %}">Home</a></li>
+<li><a href="{% url 'about' %}">About Project</a></li>
+<li class="services">
+    <a href="#">Login</a>&nbsp;&nbsp;&nbsp;&nbsp; <!-- here # represents same page-->
+
+    <ul class="dropdown">
+            <li><a href="{% url 'studentlogin' %}">Student </a></li>
+            <li><a href="{% url 'facultylogin' %}">Faculty</a></li>
+            <li><a href="{% url 'login' %}">Admin</a></li>
+
+          </ul>
+</li>
+
+<li><a href="{% url 'contact' %}">Contact Us</a></li>
+   </div>
+   </ul>
+   </nav>
+
+
+
+{% block 'body' %}
+<br>
+<p>I am in Home page</p><br>
+<center>
+<img src="{%static 'images/django.png'%}"
+     </center>
+{% endblock %}
+</body>
+</html>
