@@ -1,2 +1,0 @@
-# smsproject
-Django project 
