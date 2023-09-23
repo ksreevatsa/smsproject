@@ -12,10 +12,10 @@
 <h2 align="center">Student Academic Managemnt System</h2>
 <br>
 
-<a href="{% url 'studenthome' %}">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{% url 'facultyhome' %}">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="{%url 'facultychangepwd'%}">Change password</a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="{% url 'facultycourses' %}">My Courses</a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="#">Course Content</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{%url 'addcoursecontentform'%}">Course Content</a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="{% url 'facultylogin'%}">Logout</a>&nbsp;&nbsp;&nbsp;&nbsp;
 
 <h3 align="right"style="color:Green">Welcome, {{fid}}</h3>

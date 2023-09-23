@@ -1,0 +1,27 @@
+{% extends 'facultyhome.html' %}
+
+{% block 'body' %}
+<h2 align="center" style="color:red">{{msg}}</h2><br>
+<h3 align="center"><u>Add Course Content</u></h3>
+<center>
+<form method="post">
+    {% csrf_token %}
+<!--    {{form.as_p}}-->
+<!--    <input type="submit" value="Add" class="button-1">-->
+<!--    <input type="reset" value="Clear" class="button-1">-->
+    <table align="center" width="30%" height="50%">
+    {% for field in form %}
+    <tr>
+      <td><label>{{field.label}}</label></td>
+        <td>{{field}}</td>
+        <td></td>
+     </tr>
+    {% endfor %}
+        <tr align="center">
+          <td><input type="submit" value="Add" class="button-1"></td>
+            <td><input type="reset" value="Clear"class="button-1"></td>
+        </tr>
+        </table>
+</form>
+</center>
+{% endblock %}

@@ -1,8 +1,9 @@
 from django.db.models import Q
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from adminapp.models import Faculty,FacultyCourseMapping,Course
-
+from .forms import AddCourseContentForm
+from .models import CourseContent
 
 # Create your views here.
 def checkfacultylogin(request):
@@ -52,3 +53,18 @@ def facultyupdatepwd(request):
 def facultychangepwd(request):
     fid = request.session["fid"]
     return render(request, "facultychangepwd.html",{"fid":fid})
+
+def addcoursecontentform(request):
+    fid = request.session["fid"]
+    form=AddCourseContentForm() #non paramaterized constructor
+    if request.method=="POST":
+          form1=AddCourseContentForm(request.POST)
+          if form1.is_valid():
+              form1.save() # this will save the data in the faculty_table
+              message = "Content Added Successfully"
+              return render(request, "facultycoursecontent.html", {"msg": message,"form":form,"fid":fid})
+          else:
+              message = "Failed to add Content"
+              return render(request, "facultycoursecontent.html", {"msg": message, "form": form, "fid":fid})
+    return render(request,"facultycoursecontent.html",{"form":form,"fid":fid})
+
